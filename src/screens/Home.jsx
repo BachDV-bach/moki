@@ -13,6 +13,8 @@ import { Searchbar } from "react-native-paper";
 import HozizontalListDiscount from "../components/HozizontalListDiscount";
 import HozizontalListPartner from "../components/HozizontalListPartner";
 import HozizontalListProduct from "../components/HozizontalListProduct";
+import { Rating, AirbnbRating } from "react-native-ratings";
+
 
 const data = [
   {
@@ -62,84 +64,138 @@ const data1 = [
 
 export default Home = () => {
   return (
-    <ScrollView style={styles.container}>
-      <StatusBar
-        barStyle="dark-content"
-        backgroundColor="white"
-        hidden={false}
-      />
-      <View style={styles.rowLocation}>
-        <Image
-          style={styles.imageLocation}
-          source={require("../../assets/icon/location.png")}
+    <ScrollView>
+      <View style={styles.container}>
+        <StatusBar
+          barStyle="dark-content"
+          backgroundColor="white"
+          hidden={false}
         />
-        <Text
-          style={styles.textLocation}
-          numberOfLines={1}
-          ellipsizeMode="clip"
-        >
-          Số nhà 29 ngõ 42, Trần Bình, Cầu Giấy, Hà Nội
-        </Text>
-        <Image
-          style={styles.imageNext}
-          source={require("../../assets/icon/next.png")}
-        />
-        <Image
-          style={styles.imageNotification}
-          source={require("../../assets/icon/notification.png")}
-        />
-      </View>
-      <View style={styles.Wrapsearch}>
-        <Searchbar style={styles.searchbar} placeholder="Tìm kiếm thứ gì đó" />
-        <View style={styles.wrapSetting}>
+        <View style={styles.rowLocation}>
           <Image
-            source={require("../../assets/icon/setting.png")}
-            style={styles.settingIcon}
+            style={styles.imageLocation}
+            source={require("../../assets/icon/location.png")}
+          />
+          <Text
+            style={styles.textLocation}
+            numberOfLines={1}
+            ellipsizeMode="clip"
+          >
+            Số nhà 29 ngõ 42, Trần Bình, Cầu Giấy, Hà Nội
+          </Text>
+          <Image
+            style={styles.imageNext}
+            source={require("../../assets/icon/next.png")}
+          />
+          <Image
+            style={styles.imageNotification}
+            source={require("../../assets/icon/notification.png")}
+          />
+        </View>
+        <View style={styles.Wrapsearch}>
+          <Searchbar
+            style={styles.searchbar}
+            placeholder="Tìm kiếm thứ gì đó"
+          />
+          <View style={styles.wrapSetting}>
+            <Image
+              source={require("../../assets/icon/setting.png")}
+              style={styles.settingIcon}
+            />
+          </View>
+        </View>
+        <Image
+          style={styles.logo}
+          source={require("../../assets/icon/moki.png")}
+        />
+        <View style={styles.rowCategory}>
+          <ItemCategory
+            color="#D5D5FF"
+            text="Đồ ăn"
+            icon={require("../../assets/icon/cup.png")}
+          />
+          <ItemCategory
+            color="#FFF48A"
+            text="Thực phẩm"
+            icon={require("../../assets/icon/egg.png")}
+          />
+          <ItemCategory
+            color="#D7D9E2"
+            text="Tạp hóa"
+            icon={require("../../assets/icon/grocecy.png")}
+          />
+          <ItemCategory
+            color="#D2FAE6"
+            text="Thực đơn tiệc"
+            icon={require("../../assets/icon/menu.png")}
           />
         </View>
       </View>
-      <Image
-        style={styles.logo}
-        source={require("../../assets/icon/moki.png")}
-      />
-      <View style={styles.rowCategory}>
-        <ItemCategory
-          color="#D5D5FF"
-          text="Đồ ăn"
-          icon={require("../../assets/icon/cup.png")}
+
+      <View style={styles.listSectionContainer}>
+        <View style={styles.WrapListWhiteProduct}>
+          <TitleCategory name="Deal cho ngày nắng nóng" />
+          <HozizontalListDiscount data={data} />
+        </View>
+
+        <View style={styles.WrapListWhiteProduct}>
+          <TitleCategory name="Hà Nội ơi hôm nay ăn gì" />
+          <HozizontalListProduct data={data} />
+        </View>
+
+        <View style={styles.WrapListPartner}>
+          <TitleCategory name="Đối tác nổi bật" />
+          <HozizontalListPartner data={data1} />
+        </View>
+
+        <View style={styles.WrapListWhiteProduct}>
+          <TitleCategory name="Đồ ăn" />
+          <HozizontalListProduct data={data} />
+        </View>
+
+        <View style={styles.WrapListGrayProduct}>
+          <TitleCategory name="Thực phẩm" />
+          <HozizontalListProduct data={data} />
+        </View>
+
+        <View style={styles.WrapListWhiteProduct}>
+          <TitleCategory name="Tạp hóa" />
+          <HozizontalListProduct data={data} />
+        </View>
+
+        <View style={styles.WrapListGrayProduct}>
+          <TitleCategory name="Thực đơn tiệc" />
+          <HozizontalListProduct data={data} />
+        </View>
+
+        <Image
+          style={styles.banner}
+          source={require("../../assets/icon/banner.png")}
         />
-        <ItemCategory
-          color="#FFF48A"
-          text="Thực phẩm"
-          icon={require("../../assets/icon/egg.png")}
-        />
-        <ItemCategory
-          color="#D7D9E2"
-          text="Tạp hóa"
-          icon={require("../../assets/icon/grocecy.png")}
-        />
-        <ItemCategory
-          color="#D2FAE6"
-          text="Thực đơn tiệc"
-          icon={require("../../assets/icon/menu.png")}
+
+        <View style={styles.WrapListWhiteProduct}>
+          <TitleCategory name="Công thức nấu ăn" />
+          <HozizontalListProduct data={data} />
+        </View>
+        <AirbnbRating
+          count={11}
+          reviews={[
+            "Terrible",
+            "Bad",
+            "Meh",
+            "OK",
+            "Good",
+            "Hmm...",
+            "Very Good",
+            "Wow",
+            "Amazing",
+            "Unbelievable",
+            "Jesus",
+          ]}
+          defaultRating={11}
+          size={20}
         />
       </View>
-      <TitleCategory name="Deal cho ngày nắng nóng" />
-      <HozizontalListDiscount data={data} />
-      <TitleCategory name="Hà Nội ơi hôm nay ăn gì" />
-      <HozizontalListProduct data={data} />
-      <TitleCategory name="Đối tác nổi bật" />
-      <HozizontalListPartner data={data1}/>
-      <TitleCategory name="Đồ ăn" />
-      <HozizontalListProduct data={data} />
-      <TitleCategory name="Thực phẩm" />
-      <HozizontalListProduct data={data} />
-      <TitleCategory name="Tạp hóa" />
-      <HozizontalListProduct data={data} />
-      <TitleCategory name="Thực đơn tiệc" />
-      <HozizontalListProduct data={data} />
-      <TitleCategory name="Công thức nấu ăn" />
-      <HozizontalListProduct data={data} />
     </ScrollView>
   );
 };
@@ -152,11 +208,12 @@ ItemCategory = (props) => {
           justifyContent: "center",
           alignItems: "center",
           backgroundColor: props.color,
-          width: 70,
-          height: 70,
+          width: 60,
+          height: 60,
+          borderRadius:5
         }}
       >
-        <Image source={props.icon} style={styles.itemImageCategory} />
+      <Image source={props.icon} style={styles.itemImageCategory} />
       </View>
       <Text style={styles.textCategory} numberOfLines={1}>
         {props.text}
@@ -175,7 +232,7 @@ TitleCategory = (props) => {
         {props.name}
       </Text>
       <TouchableOpacity onPress={props.onPress}>
-        <Text style={{ color: "#A5CE36", fontSize: 16, marginLeft: 8 }}>
+        <Text style={{ color: "#A5CE36", fontSize: 16, marginHorizontal:8}}>
           Xem thêm
         </Text>
       </TouchableOpacity>
@@ -214,13 +271,17 @@ const styles = StyleSheet.create({
     alignItems: "center",
     flexDirection: "column",
     flex: 1,
+    
   },
   titleCategory: {
     flexDirection: "row",
     justifyContent: "space-between",
-    marginTop: 20,
   },
-  itemImageCategory: { resizeMode: "contain", width: 30, height: 30 },
+  itemImageCategory: {
+    resizeMode: "contain",
+    width: 27,
+    height: 27,
+  },
   imageNotification: {
     width: 30,
     height: 30,
@@ -228,8 +289,8 @@ const styles = StyleSheet.create({
     resizeMode: "contain",
   },
   imageLocation: {
-    width: 30,
-    height: 30,
+    width: 25,
+    height: 25,
     marginLeft: 10,
     resizeMode: "contain",
   },
@@ -241,11 +302,11 @@ const styles = StyleSheet.create({
   },
   imageNext: {
     resizeMode: "contain",
-    width: 20,
-    height: 20,
+    width: 15,
+    height: 15,
+    marginLeft: 8,
   },
   settingIcon: {
-    marginLeft: 8,
     width: 25,
     height: 25,
     resizeMode: "contain",
@@ -258,11 +319,38 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   wrapSetting: {
+    width: 50,
+    height: 50,
     borderRadius: 5,
     marginLeft: 8,
     backgroundColor: "#F2F3F8",
-    height: 50,
-    width: 50,
     justifyContent: "center",
+    alignItems: "center",
+  },
+  WrapListPartner: {
+    backgroundColor: "#F9FAFC",
+    paddingBottom: 38,
+    marginTop: 20,
+    paddingLeft: "5%",
+  },
+  WrapListWhiteProduct: {
+    backgroundColor: "white",
+    paddingVertical: 20,
+    paddingLeft: "5%",
+  },
+  WrapListGrayProduct: {
+    backgroundColor: "#F9FAFC",
+    paddingVertical: 20,
+    paddingLeft: "5%",
+  },
+  listSectionContainer: {
+    flexDirection: "column",
+  },
+  banner: {
+    width: "90%",
+    height: 120,
+    borderRadius: 5,
+    marginHorizontal: "5%",
+    marginVertical: 20,
   },
 });

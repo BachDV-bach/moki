@@ -1,26 +1,22 @@
-import React from 'react';
-import { View, Text ,StyleSheet,FlatList,Image} from 'react-native';
-import { Rating, AirbnbRating } from 'react-native-ratings';
+import React from "react";
+import { View, Text, StyleSheet, FlatList, Image } from "react-native";
+import { Rating} from "react-native-ratings";
 
-                                             
-HozizontalListPartner= (props) => {
+HozizontalListPartner = (props) => {
   return (
-    <View style={{width:'100%',marginTop:15}}>
-      <FlatList  horizontal={true}
-      showsHorizontalScrollIndicator={false}
-      data={props.data}
-      keyExtractor={item=>item.key}
-      renderItem={
-          ({item})=>(
-            <ItemPartner item={item}/>
-          )
-      }
+    <View style={{ width: "100%", marginTop: 15 }}>
+      <FlatList
+        horizontal={true}
+        showsHorizontalScrollIndicator={false}
+        data={props.data}
+        keyExtractor={(item) => item.key}
+        renderItem={({ item }) => <ItemPartner item={item} />}
       />
     </View>
   );
 };
 
-ItemPartner= (props) => {
+ItemPartner = (props) => {
   return (
     <View style={styles.container}>
       <Rating
@@ -28,12 +24,16 @@ ItemPartner= (props) => {
         imageSize={25}
         style={{
           marginRight: 16,
+
           marginBottom: -13,
+          borderRadius:30
         }}
-        ratingColor='orange'
-        readonly={false}
+        ratingColor="orange"
+        ratingBackgroundColor="white"
+        tintColor="#FF9138"
+        startingValue={0}
       />
-        <View style={styles.containerItem}>
+      <View style={styles.containerItem}>
         <Image source={props.item.image} style={styles.image} />
         <Text style={styles.text} numberOfLines={2}>
           {props.item.title}
@@ -45,10 +45,10 @@ ItemPartner= (props) => {
 
 const styles = StyleSheet.create({
   container: {
-      flexDirection:'column',
-      alignItems:'flex-end'
+    flexDirection: "column",
+    alignItems: "flex-end",
   },
-  
+
   containerItem: {
     flexWrap: "wrap",
     backgroundColor: "white",
@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
     marginRight: 16,
     padding: 16,
     flexDirection: "row",
-    zIndex:-1
+    zIndex: -1,
   },
   text: {
     marginLeft: 8,
