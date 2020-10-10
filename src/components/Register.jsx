@@ -123,7 +123,9 @@ const styles = StyleSheet.create({
     justifyContent: "flex-start",
     alignItems: "flex-start",
     flexDirection: "column",
-    width: "90%",
+    width: "100%",
+    paddingLeft:'5%',
+    paddingRight:'5%'
   },
   title: {
     fontSize: 30,

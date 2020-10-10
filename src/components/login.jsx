@@ -34,7 +34,7 @@ const Login = () => {
       </View>
 
       <View style={styles.title}>
-        <Text style={{ fontSize: 22, fontWeight: "bold", marginBottom: "2%" }}>
+        <Text style={{ fontSize: 24, fontWeight: "bold", marginBottom: "2%" }}>
           Đăng nhập
         </Text>
         <Text style={{ fontSize: 12 }}>
@@ -43,13 +43,13 @@ const Login = () => {
       </View>
 
       <View style={styles.login}>
-        <View style={styles.txtInput}>
+        <View style={styles.txtInputGroup}>
           <View style={styles.username}>
             <TextInput
               style={styles.loginInput}
               textContentType={"username"}
               keyboardType={"email-address"}
-              placeholder={"Tài khoản"}
+              placeholder={"Tài khoản"}              
             ></TextInput>
           </View>
           <View style={styles.password}>
@@ -130,6 +130,7 @@ const Login = () => {
           style={{
             fontSize: 14,
             color: "#666666",
+            marginRight: "2%",
           }}
         >
           Nếu bạn chưa có tài khoản?
@@ -138,7 +139,7 @@ const Login = () => {
           <Text
             style={{
               fontSize: 14,
-              color: "chartreuse",
+              color: "#A5CE36",
             }}
           >
             Đăng ký
@@ -155,13 +156,12 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     width: "90%",
-    marginVertical: "20%",
+    paddingVertical: '15%'
   },
   backAndPicker: {
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "center",
-    marginTop: "15%",
   },
   back: {
     flex: 1,
@@ -176,25 +176,23 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     marginTop: "20%",
   },
+  txtInputGroup:{
+    height: '25%',
+  },
   login: {
     width: "100%",
     marginTop: "20%",
   },
-  txtInput:{
-    backgroundColor:'blue',
-    justifyContent: "center",
-    height: "30%",
-  },
   loginInput: {
     width: "100%",
-    height: "27%",
+    height: "65%",
     borderBottomWidth: 1,
     borderBottomColor: "#D7D9E2",
-    backgroundColor: 'yellow'
   },
   forgetPassword: {
     justifyContent: "center",
     alignItems: "flex-end",
+    marginTop: "13%",
   },
   loginButton: {
     borderWidth: 1,
@@ -204,34 +202,35 @@ const styles = StyleSheet.create({
     height: "10%",
     justifyContent: 'center',
     alignItems: "center",
+    marginTop: '15%',
   },
   socialNetworkLogin: {
     width: "100%",
     flexDirection: "row",
-    justifyContent: 'space-around',
     alignItems: "center",
-    backgroundColor: "red",
+    height: "20%",
+    paddingLeft: '9%', 
+    paddingRight: '27%',
   },
   socialNetworkIcon: {
-    height: "65%",
+    height: "67%",
     width: "20%",
   },
   socialNetworkButton: {
     borderWidth: 1,
     borderColor: "#D7D9E2",
-    borderRadius: 3,
+    borderRadius: 5,
     flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-between",
-    height: "27%",
-    width: "55%",
+    alignItems: "center", 
+    justifyContent: 'space-around',
+    height: "40%",
+    width: '70%',
   },
   register: {
     width: "100%",
     flexDirection: "row",
     alignItems: "center",
-    justifyContent: "center",
-    marginBottom: "30%",
+    justifyContent: 'center',
   },
 });
 

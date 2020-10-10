@@ -4,6 +4,8 @@ import AppIntroSlider from 'react-native-app-intro-slider';
 export const { width, height } = Dimensions.get("window");
 const title_height = height * 0.13;
 import Login from './src/components/login';
+import Register from './src/components/Register'
+import Home from './src/screens/Home';
 const slides = [
   {
     key: "1",
@@ -95,44 +97,54 @@ export default class App extends React.Component {
   //   );
   // };
 
-  _renderItem = ({ item }) => {
-    return (
-      <View style={styles.slide}>
-        <Image resizeMode="stretch" style={styles.image} source={item.image} />
-        <View
-          style={[
-            { bottom: 0, paddingVertical: height * 0.13 },
-            styles.titleContainer,
-          ]}
-        >
-          <Text style={styles.text}>{item.text}</Text>
-          <Text style={styles.title}>{item.title}</Text>
-          <Text style={styles.abstract}>{item.abstract}</Text>
-        </View>
-      </View>
-    );
-  };
+  // _renderItem = ({ item }) => {
+  //   return (
+  //     <View style={styles.slide}>
+  //       <Image resizeMode="stretch" style={styles.image} source={item.image} />
+  //       <View
+  //         style={[
+  //           { bottom: 0, paddingVertical: height * 0.13 },
+  //           styles.titleContainer,
+  //         ]}
+  //       >
+  //         <Text style={styles.text}>{item.text}</Text>
+  //         <Text style={styles.title}>{item.title}</Text>
+  //         <Text style={styles.abstract}>{item.abstract}</Text>
+  //       </View>
+  //     </View>
+  //   );
+  // };
 
-  _onDone = () => {
-    this.setState({ showApp: true });
-  };
+  // _onDone = () => {
+  //   this.setState({ showApp: true });
+  // };
+  // render() {
+  //   if (this.state.showApp) {
+  //     return <Screen1 />;
+  //   } else {
+  //     return (
+  //       <AppIntroSlider
+  //         renderItem={this._renderItem}
+  //         data={slides}
+  //         // renderDoneButton={this._renderDoneButton}
+  //         onDone={this._onDone}
+  //         showSkipButton={true}
+  //         onSkip={this._onSkip}
+  //         bottomButton
+  //       />
+  //     );
+  //   }
+  // }
+
+
+
+  //show
+
   render() {
-    if (this.state.showApp) {
-      return <Screen1 />;
-    } else {
-      return (
-        <AppIntroSlider
-          renderItem={this._renderItem}
-          data={slides}
-          // renderDoneButton={this._renderDoneButton}
-          onDone={this._onDone}
-          showSkipButton={true}
-          onSkip={this._onSkip}
-          bottomButton
-        />
-      );
-    }
-  }
+    return (
+      <Home/>
+    )
+  };
 }
 
 class Screen1 extends React.Component {
