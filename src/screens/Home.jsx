@@ -13,7 +13,6 @@ import { Searchbar } from "react-native-paper";
 import HozizontalListDiscount from "../components/HozizontalListDiscount";
 import HozizontalListPartner from "../components/HozizontalListPartner";
 import HozizontalListProduct from "../components/HozizontalListProduct";
-import { Rating, AirbnbRating } from "react-native-ratings";
 
 
 const data = [
@@ -177,24 +176,6 @@ export default Home = () => {
           <TitleCategory name="Công thức nấu ăn" />
           <HozizontalListProduct data={data} />
         </View>
-        <AirbnbRating
-          count={11}
-          reviews={[
-            "Terrible",
-            "Bad",
-            "Meh",
-            "OK",
-            "Good",
-            "Hmm...",
-            "Very Good",
-            "Wow",
-            "Amazing",
-            "Unbelievable",
-            "Jesus",
-          ]}
-          defaultRating={11}
-          size={20}
-        />
       </View>
     </ScrollView>
   );
