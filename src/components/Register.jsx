@@ -10,7 +10,7 @@ import {
 import { TextInput } from "react-native-gesture-handler";
 import { Ionicons } from "@expo/vector-icons";
 
-Register = () => {
+const Register = () => {
   const [selectedValue, setSelectedValue] = useState("");
   const [SelectedInput, setSelectedInput] = useState(-1);
   const inputProps = {

@@ -2,7 +2,7 @@ import React from "react";
 import { View, Text, StyleSheet, FlatList, Image } from "react-native";
 import { Rating} from "react-native-ratings";
 
-HozizontalListPartner = (props) => {
+const HozizontalListPartner = (props) => {
   return (
     <View style={{ width: "100%", marginTop: 15 }}>
       <FlatList
@@ -16,7 +16,7 @@ HozizontalListPartner = (props) => {
   );
 };
 
-ItemPartner = (props) => {
+const ItemPartner = (props) => {
   return (
     <View style={styles.container}>
       <Rating

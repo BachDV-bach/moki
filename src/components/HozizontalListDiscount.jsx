@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text,StyleSheet,Image,FlatList } from 'react-native';
 
                                              
-HozizontalListDiscount= (props) => {
+const HozizontalListDiscount= (props) => {
   return (
     <View style={{width:'100%',marginTop:12}}>
       <FlatList  horizontal={true}
@@ -19,7 +19,7 @@ HozizontalListDiscount= (props) => {
   );
 };
 
-ItemDiscount= (props) => {
+const ItemDiscount= (props) => {
   return (
     <View style={styles.containerItem}>
         <Image source={props.item.image} style={styles.image}/>

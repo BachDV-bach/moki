@@ -61,7 +61,7 @@ const data1 = [
 ];
 
 
-export default Home = () => {
+const Home = () => {
   return (
     <ScrollView>
       <View style={styles.container}>
@@ -335,3 +335,4 @@ const styles = StyleSheet.create({
     marginVertical: 20,
   },
 });
+export default Home;

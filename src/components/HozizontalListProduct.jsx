@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text ,StyleSheet,FlatList,Image} from 'react-native';
                                              
-HozizontalListProduct= (props) => {
+const HozizontalListProduct= (props) => {
   return (
     <View style={{width:'100%',marginTop:12}}>
       <FlatList  horizontal={true}
@@ -18,7 +18,7 @@ HozizontalListProduct= (props) => {
   );
 };
 
-ItemProduct= (props) => {
+const ItemProduct= (props) => {
   return (
     <View style={styles.containerItem}>
         <Image source={props.item.image} style={styles.image}/>
